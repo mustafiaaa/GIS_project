@@ -31,3 +31,12 @@
     transform: rotate(360deg);
   }
 }
+
+.TabCss {
+  height: 80vh !important;
+}
+
+
+#menu * {
+  padding: 10px;
+}
