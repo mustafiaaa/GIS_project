@@ -1,59 +1,29 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import mapboxgl from 'mapbox-gl'
-import Tooltip from './tooltip'
-mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
+import designMapObj from './MapObj'
 
 export default class ThirdMap extends React.Component {
-  tooltipContainer;
-
-  setTooltip(features) {
-    if (features.length) {
-      ReactDOM.render(
-        React.createElement(
-          Tooltip, {
-            features
-          }
-        ),
-        this.tooltipContainer
-      );
-    } else {
-      this.tooltipContainer.innerHTML = ''
-    }
-  }
-
+ 
   componentDidMount() {
 
-    // Container to put React generated content in.
-    this.tooltipContainer = document.createElement('div')
+    let mapDetails = {
+      container : this.mapContainer,
+      style : 'mapbox://styles/mapbox/streets-v11',
+      center : [88.3953, 26.7271],
+      zoom : 12
+    };
 
-    const map = new mapboxgl.Map({
-      container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [88.3953, 26.7271],
-      zoom: 12
-    })
+    const mapObj = designMapObj(mapDetails)     
 
-    const tooltip = new mapboxgl.Marker(this.tooltipContainer, {
-      offset: [-120, 0]
-    }).setLngLat([0,0]).addTo(map)
-    
-    map.on('mousemove', (e) => {
-      const features = map.queryRenderedFeatures(e.point)
-      tooltip.setLngLat(e.lngLat)
-      map.getCanvas().style.cursor = features.length ? 'pointer' : ''
-      this.setTooltip(features)
-    })
-    var layerList = document.getElementById('menu')
-    
-    var inputs = layerList.getElementsByTagName('input')
+    let layerList = document.getElementById('menu')
+    let inputs = layerList.getElementsByTagName('input')
     
     function switchLayer(layer) {
-    var layerId = layer.target.id
-    map.setStyle('mapbox://styles/mapbox/' + layerId);
+      let layerId = layer.target.id
+      mapObj.setStyle('mapbox://styles/mapbox/' + layerId);
     }
-    for (var i = 0; i < inputs.length; i++) {
-    inputs[i].onclick = switchLayer
+    
+    for (let i = 0; i < inputs.length; i++) {
+          inputs[i].onclick = switchLayer
     }
   }
 

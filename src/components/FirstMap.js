@@ -1,12 +1,11 @@
 
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from "react-dom"
+import Tooltip from "./tooltip"
 import mapboxgl from 'mapbox-gl'
-import Tooltip from './tooltip'
 
-mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
-
-export default class FirstMap extends React.Component {
+export default class FirstMap extends React.Component{
+  
   tooltipContainer;
 
   setTooltip(features) {
@@ -25,17 +24,17 @@ export default class FirstMap extends React.Component {
   }
 
   componentDidMount() {
-
+    
     // Container to put React generated content in.
     this.tooltipContainer = document.createElement('div')
 
     const map = new mapboxgl.Map({
-      container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/streets-v9',
-      center: [77, 12],
-      zoom: 12.5
-    })
-
+        container : this.map,
+        style : 'mapbox://styles/mapbox/streets-v9',
+        center : [77, 12],
+        zoom : 12.5 
+    });
+    
     const tooltip = new mapboxgl.Marker(this.tooltipContainer, {
       offset: [-120, 0]
     }).setLngLat([0,0]).addTo(map)
@@ -47,11 +46,10 @@ export default class FirstMap extends React.Component {
       this.setTooltip(features);
     })
   }
-
+  
   render() {
-    return (
-      <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
-    )
+    return ( 
+        <div ref={el => this.map = el} className="absolute top right left bottom TabCss" /> 
+      )
   }
 }
-
