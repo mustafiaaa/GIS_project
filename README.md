@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## GIS (geographic information system)
+  This is a prototype of GIS application
+    
+Project link :
+    https://github.com/mustafiaaa/GIS_project
+ 
+### Features of the application :
+  Showing five maps as a GIS using mapbox API
+ 
+  ### Frist Map :
+    Its a general 'streets-v9' style map of a location where a center is given "enter: [77, 12]" 
+            and the surrounding area is shown
+    in the map.
+   
+    Tooltip is added for showing type of earth bodies (water body or field)
+    
+  ### Second Map :
+     Its a general 'satellite-v9' style map of a location where a center is given "enter: [77.5946,                12.9716]" and the surrounding   
+     area is shown.
+ 
+  ### Third Map :
+     Changing the map style by a menu bar (streets, light, dark, outdoors, satellite)
+     by clicking the radio button we can change the map style
+ 
+  ### Fourth Map :
+     Its a 3D layer map, Buildings are shown in 3D.
+     
+  ### Fifth Map :
+      Its a custom layered map, using jeojson data. Three polygon layers  are added and overlapping two polygon within one big            
+      polygon.
+          
+## Technology and API used :
 
-## Available Scripts
+  ### React JS
+     For implementing a web app.
 
-In the project directory, you can run:
+  ### MapBox API
+     For drawing maps and adding the layers.
 
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  ### Samentic UI
+     For UI design and components.
